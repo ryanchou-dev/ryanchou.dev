@@ -6,12 +6,44 @@ import { cn } from "./utils/cn";
 import Image from "next/image";
 import cow from "../../public/moo.svg";
 
+function useWindowSize() {
+	// Initialize state with undefined width/height so server and client renders match
+	// Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+	const [windowSize, setWindowSize] = useState({
+	  width: undefined,
+	  height: undefined,
+	});
+
+	useEffect(() => {
+	  // only execute all the code below in client side
+	  // Handler to call on window resize
+	  function handleResize() {
+		// Set window width/height to state
+		setWindowSize({
+		  width: window.innerWidth,
+		  height: window.innerHeight,
+		});
+	  }
+
+	  // Add event listener
+	  window.addEventListener("resize", handleResize);
+
+	  // Call handler right away so state gets updated with initial window size
+	  handleResize();
+
+	  // Remove event listener on cleanup
+	  return () => window.removeEventListener("resize", handleResize);
+	}, []); // Empty array ensures that effect is only run on mount
+	return windowSize;
+  }
+
 export const EvervaultCard = ({
   text,
   className,
 }) => {
-  let mouseX = useMotionValue(window.innerWidth /3.5);
-  let mouseY = useMotionValue(window.innerHeight / 4);
+	const size = useWindowSize();
+  let mouseX = useMotionValue(size.width / 3.5)
+  let mouseY = useMotionValue(size.height / 3.5)
 
   const [randomString, setRandomString] = useState("");
 
@@ -47,7 +79,7 @@ export const EvervaultCard = ({
         />
         <div className="relative z-10 flex items-center justify-center">
           <div className="relative py-8 px-8  rounded-full flex items-center justify-center text-white font-bold lg:text-6xl text-3xl">
-            <div className="absolute w-full h-full bg-gradient-to-tr via-[#C3F0F5]/70 from-[#ffdf6b]/70  to-[#a9ff6b]/70 blur-sm rounded-full" />
+            <div className="absolute w-full h-full bg-white/60 via-[#C3F0F5]/70 from-[#ffdf6b]/70  to-[#a9ff6b]/70 blur-sm rounded-full" />
 			<div className="z-10 flex-col flex items-center justify-center">
 
             <span className="text-black z-20 flex-shrink text-2xl sm:text-3xl lg:text-5xl font-sans font-semibold flex justify-center items-center">
@@ -73,7 +105,7 @@ export function CardPattern({ mouseX, mouseY, randomString }) {
     <div className="pointer-events-none">
       <div className="absolute inset-0 rounded-2xl  [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
       <motion.div
-        className="absolute inset-0  rounded-2xl bg-gradient-to-r from-green-500 to-blue-700  group-hover/card:opacity-100 opacity-30 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0  rounded-2xl bg-gradient-to-tr via-[#C3F0F5] from-[#ffdf6b]  to-[#a9ff6b]  group-hover/card:opacity-100 opacity-30 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
