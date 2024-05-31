@@ -33,7 +33,7 @@ export default function Home() {
 	return (
 		<div>
 			<div className="flex  max-h-screen flex-col">
-				<div className=" mb-2 border mt-28 border-black/[0.2] flex flex-col items-start xl:w-5/6 w-full mx-auto p-4 relative xl:max-h-[26rem] max-h-[20rem]">
+				<div className=" mb-2 border mt-28 border-black/[0.2] flex flex-col items-start xl:w-5/6 w-full mx-auto p-4 relative xl:max-h-[25rem] max-h-[10rem] sm:max-h-[20rem]">
 					<Icon className="absolute h-6 w-6 -top-3 -left-3 text-black " />
 					<Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-black" />
 					<Icon className="absolute h-6 w-6 -top-3 -right-3 text-black " />
