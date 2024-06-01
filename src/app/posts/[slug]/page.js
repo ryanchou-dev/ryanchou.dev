@@ -9,6 +9,7 @@ export const generateMetadata = ({ params }) => {
 	const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
 	return { title: post.title };
 };
+import SEO from "../../../components/SEO";
 
 const mdxComponents = {
 	a: ({ href, children }) => (
@@ -47,6 +48,7 @@ const PostLayout = ({ params }) => {
 
 	return (
 		<>
+			<SEO title={"Ryan Chou | " + post.title} />
 			<div className="mb-8 text-left mt-32">
 				<h1 className=" text-4xl sm:text-5xl font-semibold">{post.title}</h1>
 				<time dateTime={post.date} className="mb-1 text-xs text-gray-600">

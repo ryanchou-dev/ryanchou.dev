@@ -10,6 +10,7 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import actions from "../../public/boba.json";
 import { Icon, EvervaultCard } from "../components/evervault-card";
 import { FlipWords } from "../components/flip-words";
+import SEO from "../components/SEO";
 export default function Home() {
 	const [temp, setTemp] = useState(0);
 	const [day, setDay] = useState(1);
@@ -32,6 +33,7 @@ export default function Home() {
 
 	return (
 		<div>
+			<SEO />
 			<div className="flex  max-h-screen flex-col">
 				<div className=" mb-2 border mt-28 border-black/[0.2] flex flex-col items-start xl:w-5/6 w-full mx-auto p-4 relative h-[15rem] lg:h-[25rem]">
 					<Icon className="absolute h-6 w-6 -top-3 -left-3 text-black " />
