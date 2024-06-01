@@ -1,13 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { projects } from "../../../public/projects";
-import SEO from "../../components/SEO";
 
 export default function Projects() {
 	return (
 
 		<div className="mt-32 pb-16">
-			<SEO title="Ryan Chou | Projects" />
 			<p className=" text-4xl text-[#ba7472] font-semibold sm:text-5xl">
 				projects
 			</p>

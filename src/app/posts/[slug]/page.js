@@ -7,9 +7,21 @@ export const generateStaticParams = async () =>
 
 export const generateMetadata = ({ params }) => {
 	const post = allPosts.find((post) => post._raw.flattenedPath === params.slug);
-	return { title: post.title };
+	return {
+		title: "Ryan Chou | " + post.title,
+
+		description: "Project Manager @ Competitive Programming Initiative, promoting competitive programming through resources such as the USACO Guide. I'm fascinated with web development, artificial intelligence, competitive programming, and design. In my free time, I enjoy chugging fruit tea, graphic design, and vibing to music B). If you want to learn more about me, check out my GitHub to see other cool projects that I've worked on.",
+		openGraph: {
+			title: "Ryan Chou | " + post.title,
+			description: "Project Manager @ Competitive Programming Initiative, promoting competitive programming through resources such as the USACO Guide. I'm fascinated with web development, artificial intelligence, competitive programming, and design. In my free time, I enjoy chugging fruit tea, graphic design, and vibing to music B). If you want to learn more about me, check out my GitHub to see other cool projects that I've worked on.",
+			url: 'https://ryanchou.dev/posts/' + params.slug,
+			siteName: 'Ryan Chou',
+			images: ['https://ryanchou.dev/moo.svg'],
+			locale: 'en_US',
+			type: 'website',
+		},
+	};
 };
-import SEO from "../../../components/SEO";
 
 const mdxComponents = {
 	a: ({ href, children }) => (
@@ -48,7 +60,6 @@ const PostLayout = ({ params }) => {
 
 	return (
 		<>
-			<SEO title={"Ryan Chou | " + post.title} />
 			<div className="mb-8 text-left mt-32">
 				<h1 className=" text-4xl sm:text-5xl font-semibold">{post.title}</h1>
 				<time dateTime={post.date} className="mb-1 text-xs text-gray-600">

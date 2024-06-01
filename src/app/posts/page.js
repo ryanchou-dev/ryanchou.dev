@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
-import SEO from "../../components/SEO";
 function PostCard(post) {
 	return (
 		<div className="mb-8">
-			<SEO title="Ryan Chou | Blog" desc="A collection of fun things that I've done." />
 			<div className="flex justify-between">
 				<div>
 					<h2 className="mb-1 text-xl">
