@@ -3,12 +3,6 @@ import Image from "next/image";
 import { projects } from "../../../public/projects";
 import SEO from "../../components/SEO";
 
-export const metadata = {
-	title: "ryan's projects",
-	description:
-		"while these projects aren't necessarily impressive, i had a really fun time making them.",
-};
-
 export default function Projects() {
 	return (
 
