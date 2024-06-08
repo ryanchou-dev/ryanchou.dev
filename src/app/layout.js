@@ -20,7 +20,7 @@ export const metadata = {
 }
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">
+		<html>
 			<body className={inter.className + " bg-white  font-sans flex items-center  justify-center"}>
 				<Navbar />
 
