@@ -73,4 +73,3 @@ const PostLayout = ({ params }) => {
 	);
 };
 
-export default PostLayout;

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects } from "../../../../public/projects"
 
-export default function Projects() {
+function Projects() {
 	return (
 
 		<div className="mt-32 pb-16">
