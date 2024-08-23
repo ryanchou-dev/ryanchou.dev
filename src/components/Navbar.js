@@ -38,7 +38,7 @@ export default function Navbar() {
 						{/* <span className="hover:hidden block">Home</span> */}
 					</Link>
 				</motion.button>
-				<motion.button
+				{/* <motion.button
 					className="group ml-4 "
 					whileTap={{ scale: 0.9 }}
 					whileHover={{ scale: 1.1 }}
@@ -78,7 +78,7 @@ export default function Navbar() {
 							Projects
 						</p>
 					</Link>
-				</motion.button>
+				</motion.button> */}
 			</div>
 			<div className="flex flex-row space-x-4  justify-end">
 				<motion.button
