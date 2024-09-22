@@ -63,10 +63,7 @@ export default function Home() {
 						<a target="_blank" rel="noreferrer" className="bg-gradient-to-br text-[#5f72a9] font-semibold inline" href="https://joincpi.org"> USACO Guide</a>.
 					</h2>
 					<h2 className="text-neutral-900 mt-4 text-sm xl:text-lg  ">
-						I&apos;m fascinated with web development, artificial intelligence, competitive programming, and design.
-
-						In my free time, I enjoy chugging fruit tea, graphic design, and vibing to music B).
-						If you want to learn more about me, check out my GitHub to see other cool projects that I&apos;ve worked on.
+						I&apos;m fascinated with design, web development, and competitive programming. If you want to learn more about me, check out my GitHub to see some cool projects that I&apos;ve worked on.
 
 					</h2>
 
