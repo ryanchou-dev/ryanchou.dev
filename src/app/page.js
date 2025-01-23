@@ -57,7 +57,7 @@ export default function Home() {
 				<div className="px-4 mb-2">
 
 					<h2 className="text-neutral-800 mt-4 text-sm xl:text-lg  ">
-						Project Manager @
+						Executive @
 						<a target="_blank" rel="noreferrer" className="bg-gradient-to-br from-[#9f55e0] to-[#5b2891] bg-clip-text text-transparent font-semibold inline" href="https://joincpi.org"> Competitive Programming Initiative</a>
 						, promoting competitive programming through resources such as the
 						<a target="_blank" rel="noreferrer" className="bg-gradient-to-br text-[#5f72a9] font-semibold inline" href="https://joincpi.org"> USACO Guide</a>.
